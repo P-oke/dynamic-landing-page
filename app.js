@@ -8,6 +8,7 @@ setInterval(() => {
   const ampm = hour < 12 ? "AM" : "PM";
 
   hour = hour % 12 || 12;
+  console.log(hour);
 
   const currenttime = ` ${addzero(hour)}:${addzero(min)}:${addzero(
     sec
@@ -25,18 +26,21 @@ function greet() {
   let date = new Date();
 
   let hour = date.getHours();
-
+  
   if (hour < 12) {
     greeting.textContent = "Good Morning";
     document.body.style.backgroundImage = "url(./image/morning.jpg)";
-    document.body.style.color = "#111";
+    document.body.style.color="#444010"
   }
-  if (hour < 18) {
+  else if  (hour<18 ) {
     greeting.textContent = "Good Afternoon";
     document.body.style.backgroundImage = "url(./image/afternoon.jpg)";
+    document.body.style.color="#2764b4"
   } else {
     greeting.textContent = "Good Evening";
     document.body.style.backgroundImage = "url(./image/night.jpg)";
+    document.body.style.color="#bfd1e0"
+    
   }
 }
 greet();
@@ -58,7 +62,6 @@ function getname() {
 }
 getname();
 
-// set name
 function setname(e) {
   if (e.type === "keypress") {
     //check if enter is pressed
@@ -72,7 +75,6 @@ function setname(e) {
 }
 
 // set schedule
-
 function setschedule(e) {
   if (e.type === "keypress") {
     //check if enter is pressed
@@ -93,5 +95,4 @@ function getschedule() {
     schedule.textContent = localStorage.getItem("schedule");
   }
 }
-
 getschedule();
