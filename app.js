@@ -8,7 +8,7 @@ setInterval(() => {
   const ampm = hour < 12 ? "AM" : "PM";
 
   hour = hour % 12 || 12;
-  console.log(hour);
+  
 
   const currenttime = ` ${addzero(hour)}:${addzero(min)}:${addzero(
     sec
